@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="border round">
+    <h1 class="my-5">{{recipe.title}}</h1>
+    <p>Ingredients: {{recipe.ingredients}}</p>
+    <p>{{recipe.recipe}}</p>
+</div>
+
+<a href="{% url 'recipes.list' %}" class="btn btn-secondary my-5">Back</a>
+<a href="{% url 'recipes.update' pk=recipe.id %}" class="btn btn-secondary">Edit</a>
+<a href="{% url 'recipes.delete' pk=recipe.id %}" class="btn btn-danger">Delete</a>
+{% endblock %}
